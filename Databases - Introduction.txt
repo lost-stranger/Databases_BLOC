@@ -1,0 +1,86 @@
+Questions:
+
+1. What data types do each of these values represent?
+
+"A Clockwork Orange" - string
+42                   - integer
+09/02/1945           - string/integer depending on how it is stored
+98.7                 - float
+$15.99               - string/float depending on how it is stored
+
+2. Explain when a database would be used. Explain when a text file would be used.
+
+A database would be used when continued access to a data set is necessary, when the dataset needs to be accessed and modified by a number of applications, where changes can be made
+without locking out or overwriting the changes pushed by applications; and when multiple applications are introducing changes to the data set. 
+Text files can be used to save a single instance of a data, where changes can be made to the data either one user/application at a time or by limited number of users/application.
+
+3. Describe one difference between SQL and other programming languages.
+
+SQL uses the '=' sign for conveying equivalence, while other languages use the sign to assign value.
+SQL, being a fourth generational language, is declarative and user intuitive.
+
+4. In your own words, explain how the pieces of a database system fit together at a high level.
+
+Data sets in a database systems is laid out in a table format arranged in rows and columns. The columns represent the properties or information that is associated with single data objects.
+The rows hold the single data object with its properties laid out in cells across the columns 
+
+5.Explain the meaning of table, row, column, and value.
+
+Borrowing from the above answer, a TABLE is a single data-set which hold unique data objects and their properties. Each data object occupies one full horiontal ROW, 
+where each property VALUE is housed under a vertical COLUMN that hold property values of the same type. Each VALUE lies in a cell at the intersection of an unique ROW and COLUMN. 
+
+6.List three data types that can be used in a table.
+
+String, Float, Integer
+
+7. Given this payments table, provide an English description of the following queries and include their results:
+
+  a. SELECT date, amount
+     FROM payments;
+     
+     > Selects the data values and corresponding amount values from the data-set called payments
+       Result:
+       |___date___|___amount___|
+       | 1/1/2019 | $480       |
+       | 2/1/2019 | $701       | 
+       | 3/1/2019 | $500       |
+       | 4/1/2019 | $581       | 
+
+
+  b. SELECT amount
+     FROM payments
+     WHERE amount > 500;
+
+    > Selects the data values and corresponding amount values where amount value is above 500 from the data-set called payments
+       Result:
+       |___date___|___amount___|
+       | 2/1/2019 | $701       | 
+       | 4/1/2019 | $581       | 
+
+  c. SELECT *
+     FROM payments
+     WHERE payee = 'Mega Foods';
+
+    > Selects all the data values where the payee value is 'Mega Foods' from the data-set called payments
+       Result:
+       |___payee____|___date___|___amount___|
+       |'Mega Foods'| 1/1/2019 | $480       |
+       |'Mega Foods'| 2/1/2019 | $701       | 
+
+8. Given this users table, write SQL queries using the following criteria and include the output:
+
+  a. The email and sign-up date for the user named DeAndre Data.
+  > SELECT email, signup 
+    FROM users
+    WHERE name = 'DeAndra Data';
+
+  b. The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+  > SELECT userid
+    FROM users
+    where email = 'aleesia.algorithm@uw.edu';
+
+  c. All the columns for the user ID equal to 4.
+  > SELECT *
+    FROM users
+    WHERE userid = 4;
+
