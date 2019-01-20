@@ -16,18 +16,23 @@ Text files can be used to save a single instance of a data, where changes can be
 
 3. Describe one difference between SQL and other programming languages.
 
-SQL uses the '=' sign for conveying equivalence, while other languages use the sign to assign value.
-SQL, being a fourth generational language, is declarative and user intuitive.
+SQL uses the '=' sign for conveying equivalence, while other languages use the sign to assign value. So essentially, SQL uses '=' to compare whether two items are equal and not for
+setting tha value of an item to that of another.
+SQL, being a fourth generational language, is declarative and user intuitive.So unlike the iterative functions in Javascript, which are needed to parse through an array and to check
+each item to find an item, with SQL we can use declarative keywords such as SELECT to find specific items, without describing how SELECT is supposed to work
 
 4. In your own words, explain how the pieces of a database system fit together at a high level.
 
-Data sets in a database systems is laid out in a table format arranged in rows and columns. The columns represent the properties or information that is associated with single data objects.
-The rows hold the single data object with its properties laid out in cells across the columns 
+Data sets in a database systems is laid out in a table format arranged in ROWS and COLUMNS. The COUMNS represent the properties or information that is associated with single data objects.
+The ROWS hold the single data object with its properties laid out in CELLS across the COLUMNS. I like to think of it  how I would find a pair of jeans at a clotihing store where
+the jeans are stacked by brand name in horizontal ROWS and each vertical COLUMN represent the fit. If I wanted to find a pair of Levis size 32", I would find it at the intersection
+of ROW for LEVIS and the COLUMN for size '32.
 
 5.Explain the meaning of table, row, column, and value.
 
-Borrowing from the above answer, a TABLE is a single data-set which hold unique data objects and their properties. Each data object occupies one full horiontal ROW, 
-where each property VALUE is housed under a vertical COLUMN that hold property values of the same type. Each VALUE lies in a cell at the intersection of an unique ROW and COLUMN. 
+Borrowing from the above answer, a TABLE is a single data-set which hold unique data objects and their properties (jeans store). Each data object occupies one full horiontal ROW (Levis jeans), 
+where each property VALUE (specific brand of jeans of a specific size) is housed under a vertical COLUMN that hold property values of the same type (all jeans '32). Each VALUE lies in a cell
+(Levis with waist size '32) at the intersection of a unique ROW and COLUMN. 
 
 6.List three data types that can be used in a table.
 
