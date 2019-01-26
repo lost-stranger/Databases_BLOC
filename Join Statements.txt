@@ -1,0 +1,38 @@
+
+1. How do you find related data held in two separate data tables?
+
+>One can use JOIN statements to find related data in two separate data tables.
+
+2. Explain, in your own words, the difference between an INNER JOIN, LEFT OUTER JOIN, and RIGHT OUTER JOIN. Give a real-world example for each.
+
+> INNER JOIN: Combines two tables showing the rows that has commmon data elements in both rows as joined data sets
+  LEFT OUTER JOIN: Combines two tables showing all the rows of the left data set, along with the ones that has commmon data elements in both rows as joined data sets
+  RIGTH OUTER JOIN: Combines two tables showing all the rows of the right data set, along with the ones that has commmon data elements in both rows as joined data sets
+
+3. Define primary key and foreign key. Give a real-world example for each.
+
+> Primary key: it is a column in a table that has data that uniquely identifies each row in the table. 
+  Foreign Key: It is one or more columns on one table that refers to the primmary key in another table.
+
+Table name : Country_Temps
+
+Country | Temp
+--------+--------------
+India   | 32 C
+--------+--------------
+US      | 25 C
+-----------------------
+
+Table name : Country_Season
+
+Count_name| Adoption_date
+----------+--------------
+US        | Fall
+----------+--------------
+India     | Monsoon
+-----------------------
+
+When joining the above two tables, 'Country' is the Primary Key for 'Country_Temps', while 'Count-name' acts as the Foreign Key that the primary key refers to.
+
+4. Define aliasing.
+

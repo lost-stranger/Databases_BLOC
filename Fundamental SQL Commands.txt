@@ -94,9 +94,9 @@ CREATE TABLE library (
 a. Find three books and add their information to the table.
 
 INSERT INTO library VALUES 
-(000001, 'Oliver Twist, 'Charles Dickens', 'Classic', 1923-02-12, 50, 3),
-(000002, 'Pet Semetry, 'Stephen King', 'Horror', 1965-03-12, 25, 17),
-(000001, 'Management', 'Peter Drucker', 'Nonfiction-Business', 1985-03-12, 7, 0);
+(000001, 'Oliver Twist, 'Charles Dickens', 'Classic', '1923-02-12', 50, 3),
+(000002, 'Pet Semetry, 'Stephen King', 'Horror', '1965-03-12', 25, 17),
+(000003, 'Management', 'Peter Drucker', 'Nonfiction-Business', '1985-03-12', 7, 0);
 
 c. Someone has just checked out one of the books. Change the number of available copies to 1 fewer.
 
@@ -115,15 +115,15 @@ yrLaunched date,
 countryOrigin text, 
 missionDesc text, 
 orbitingBody text, 
-isOperational boolean 
-distEarthMiles integer)
+isOperational boolean, 
+distEarthMiles integer);
 
 a. Add three non-Earth-orbiting satellites to the table.
 
 INSERT INTO spacecrafts VALUES 
-(000001, 'Journeyer 1', 02/12/1990, 'Canada', 'Visit nearest star', 'Alpha Centauri', True, 469797.80),
-(000002, 'Journeyer 2', 12/08/1985, 'Canada', 'Travel through a worm-hole', 'Krypton', False, 6587879.8),
-(000003, 'Journeyer 3', 07/02/2014, 'Canada', 'Find an earth like planet', 'Sombrero Galaxy', True, 988798798.89),
+(000001, 'Journeyer 1', '02/12/1990', 'Canada', 'Visit nearest star', 'Alpha Centauri', True, 469797),
+(000002, 'Journeyer 2', '12/08/1985', 'Canada', 'Travel through a worm-hole', 'Krypton', False, 6587879),
+(000003, 'Journeyer 3', '07/02/2014', 'Canada', 'Find an earth like planet', 'Sombrero Galaxy', True, 988798798);
 
 
 b. Remove one of the satellites from the table since it has just crashed into the planet.
