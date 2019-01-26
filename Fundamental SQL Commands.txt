@@ -83,7 +83,7 @@ DROP TABLE weddding-dinner;
 5. Write a command to create a new table to hold the books in a library with the columns ISBN, title, author, genre, publishing date, number of copies, and available copies.
 
 CREATE TABLE library (
- ISBN integer,
+ ISBN varchar,
  title text,
  author text,
  genre text,
@@ -94,9 +94,9 @@ CREATE TABLE library (
 a. Find three books and add their information to the table.
 
 INSERT INTO library VALUES 
-(000001, 'Oliver Twist, 'Charles Dickens', 'Classic', '1923-02-12', 50, 3),
-(000002, 'Pet Semetry, 'Stephen King', 'Horror', '1965-03-12', 25, 17),
-(000003, 'Management', 'Peter Drucker', 'Nonfiction-Business', '1985-03-12', 7, 0);
+('000001', 'Oliver Twist, 'Charles Dickens', 'Classic', '1923-02-12', 50, 3),
+('000002', 'Pet Semetry, 'Stephen King', 'Horror', '1965-03-12', 25, 17),
+('000003', 'Management', 'Peter Drucker', 'Nonfiction-Business', '1985-03-12', 7, 0);
 
 c. Someone has just checked out one of the books. Change the number of available copies to 1 fewer.
 
