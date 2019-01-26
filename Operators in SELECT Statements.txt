@@ -1,8 +1,8 @@
 1. Write out a generic SELECT statement.
 
-SELECT price
-FROM products
-WHERE name LIKE %Face%;
+SELECT <column1, column2>
+FROM <table1, table2>
+<optional: WHERE <condition>;>
 
 2. Create a fun way to remember the order of operations in a SELECT statement, such as a mnemonic.
 
@@ -21,7 +21,7 @@ a. Display the name, gender, and age of all dogs that are part Labrador.
 
 SELECT name, gender, age
 FROM dogs
-WHERE breed LIKE '%Labrador%' OR breed LIKE '%Labrador' OR breed LIKE 'Labrador%'
+WHERE breed LIKE '%Labrador%';
 
 b. Display the ids of all dogs that are under 1 year old.
 
@@ -40,7 +40,7 @@ d. Display all of the information about all dogs that are not Shepherd mixes.
 
 SELECT *
 FROM dogs
-WHERE breed NOT LIKE '%Shepherd' AND breed NOT LIKE '%Shepherd%' AND breed NOT LIKE 'Shepherd%';
+WHERE breed NOT LIKE '%Shepherd%';
 
 e. Display the id, age, weight, and breed of all dogs that are either over 60lbs or Great Danes.
 
