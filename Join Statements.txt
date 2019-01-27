@@ -36,3 +36,128 @@ When joining the above two tables, 'Country' is the Primary Key for 'Country_Tem
 
 4. Define aliasing.
 
+Method of abbreviating table names in a query usually using single alphabets to replace table names
+
+5. Change this query so that you are using aliasing:
+
+SELECT p.name, c.salary, c.vacation_days 
+FROM professor AS p 
+JOIN compensation AS c
+ON p.id = c.professor_id;
+
+6. Why would you use a NATURAL JOIN? Give a real-world example.
+
+At a pet shelter places both dogs and cats in forster homes. Data for cats and dogs are stored in separate fields. Some foster homes take multiple animals and may take both cats and dogs.
+The pet shelter administrator wants to know how many unique foster homes that they place their animals in. This can be done using Natural Join. 
+
+SELECT * FROM cat_list NATURAL JOIN dog_list;
+
+7. Using this Employee schema and data, write queries to find the following information:
+List all employees and all shifts.
+
+ SELECT employees.name, shifts.start_time, shifts.end_time
+ FROM scheduled_shifts
+ LEFT OUTER JOIN employees
+ ON scheduled_shifts.employee_id = employees.id
+ RIGHT OUTER JOIN shifts
+ ON scheduled_shifts.shift_id = shifts.id;
+
+8. Using this Adoption schema and data, please write queries to retrieve the following information and include the results:
+
+a. Create a list of all volunteers. If the volunteer is fostering a dog, include each dog as well.
+
+SELECT volunteers.first_name, volunteers.last_name, dogs.name
+FROM volunteers
+LEFT OUTER JOIN dogs
+ON volunteers.foster_dog_id = dogs.id;
+
+b. The cat's name, adopter's name, and adopted date for each cat adopted within the past month to be displayed as part of the "Happy Tail" social media promotion which posts recent successful adoptions.
+
+SELECT cats.name "Cat's name", adopters.first_name "Adopter's first name", adopters.last_name "Adopter's last name", cat_adoptions.date "Cat's adoption date"
+FROM cat_adoptions
+LEFT OUTER JOIN adopters
+ON cat_adoptions.adopter_id = adopters.id
+LEFT OUTER JOIN cats
+ON cats.id = cat_adoptions.cat_id
+WHERE cat_adoptions.date > CURRENT_DATE - INTERVAL '30 DAYS';
+
+c. Create a list of adopters who have not yet chosen a dog to adopt.
+
+SELECT adopters.first_name "Adopter's first name", adopters.last_name "Adopter's last name"
+FROM adopters
+LEFT OUTER JOIN dog_adoptions
+ON adopters.id = dog_adoptions.adopter_id
+WHERE dog_adoptions.adopter_id is null;
+
+d. Lists of all cats and all dogs who have not been adopted
+ 
+SELECT cats.name "Unadopted cats"
+FROM cats
+LEFT OUTER JOIN cat_adoptions
+ON cats.id = cat_adoptions.cat_id
+WHERE cat_adoptions.cat_id is null;
+
+SELECT dogs.name "Unadopted dogs"
+FROM dogs
+LEFT OUTER JOIN dog_adoptions
+ON dogs.id = dog_adoptions.dog_id
+WHERE dog_adoptions.dog_id is null;
+
+e. The name of the person who adopted Rosco
+
+SELECT adopters.first_name, adopters.last_name
+FROM adopters
+LEFT OUTER JOIN dog_adoptions
+ON adopters.id = dog_adoptions.adopter_id
+LEFT OUTER JOIN dogs
+ON dog_adoptions.dog_id = dogs.id
+LEFT OUTER JOIN cat_adoptions
+ON adopters.id = cat_adoptions.adopter_id
+LEFT OUTER JOIN cats
+ON cat_adoptions.cat_id = cats.id
+WHERE dogs.name = 'Rosco' OR cats.name = 'Rosco';
+
+9. Using this Library schema and data, write queries applying the following scenarios and include the results:
+
+a. To determine if the library should buy more copies of a given book, please provide the names and position, in order, of all of the patrons with a hold (request for a book with all copies checked out) on "Advanced Potion-Making".
+
+SELECT patrons.name, holds.rank
+FROM patrons
+LEFT OUTER JOIN holds
+ON holds.patron_id = patrons.id
+LEFT OUTER JOIN books
+ON books.isbn = holds.isbn
+WHERE books.title = 'Advanced Potion-Making'
+ORDER BY holds.rank ASC;
+
+b. List all of the library patrons. If they have one or more books checked out, list the books with the patrons.
+
+SELECT patrons.name, books.title
+FROM patrons
+LEFT OUTER JOIN transactions
+ON transactions.patron_id = patrons.id
+LEFT OUTER JOIN books
+ON books.isbn = transactions.isbn
+ORDER BY patrons.id ASC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
