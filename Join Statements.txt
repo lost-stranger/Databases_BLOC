@@ -132,14 +132,17 @@ ORDER BY holds.rank ASC;
 
 b. List all of the library patrons. If they have one or more books checked out, list the books with the patrons.
 
-SELECT patrons.name, books.title
+SELECT patrons.name, p.title
+FROM 
+(SELECT patrons.name, books.title
 FROM patrons
 LEFT OUTER JOIN transactions
 ON transactions.patron_id = patrons.id
 LEFT OUTER JOIN books
 ON books.isbn = transactions.isbn
-ORDER BY patrons.id ASC;
-
+WHERE transactions.checked_in_date IS null) AS p
+RIGHT OUTER JOIN patrons
+ON p.name = patrons.name;
 
 
 
